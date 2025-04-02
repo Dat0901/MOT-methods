@@ -1,0 +1,98 @@
+Eval Config:
+USE_PARALLEL         : False                         
+NUM_PARALLEL_CORES   : 1                             
+BREAK_ON_ERROR       : True                          
+RETURN_ON_ERROR      : False                         
+LOG_ON_ERROR         : /media/doki/2TB/MOT/TrackEval/error_log.txt
+PRINT_RESULTS        : True                          
+PRINT_ONLY_COMBINED  : False                         
+PRINT_CONFIG         : True                          
+TIME_PROGRESS        : True                          
+DISPLAY_LESS_PROGRESS : False                         
+OUTPUT_SUMMARY       : True                          
+OUTPUT_EMPTY_CLASSES : True                          
+OUTPUT_DETAILED      : True                          
+PLOT_CURVES          : True                          
+
+MotChallenge2DBox Config:
+PRINT_CONFIG         : True                          
+GT_FOLDER            : /media/doki/2TB/MOT/TrackEval/data/gt/mot_challenge/
+TRACKERS_FOLDER      : /media/doki/2TB/MOT/TrackEval/data/trackers/mot_challenge/
+OUTPUT_FOLDER        : None                          
+TRACKERS_TO_EVAL     : None                          
+CLASSES_TO_EVAL      : ['pedestrian']                
+BENCHMARK            : MOT20                         
+SPLIT_TO_EVAL        : train                         
+INPUT_AS_ZIP         : False                         
+DO_PREPROC           : True                          
+TRACKER_SUB_FOLDER   : data                          
+OUTPUT_SUB_FOLDER    :                               
+TRACKER_DISPLAY_NAMES : None                          
+SEQMAP_FOLDER        : None                          
+SEQMAP_FILE          : None                          
+SEQ_INFO             : None                          
+GT_LOC_FORMAT        : {gt_folder}/{seq}/gt/gt.txt   
+SKIP_SPLIT_FOL       : False                         
+
+CLEAR Config:
+METRICS              : ['HOTA', 'CLEAR', 'Identity', 'VACE']
+THRESHOLD            : 0.5                           
+PRINT_CONFIG         : True                          
+
+Identity Config:
+METRICS              : ['HOTA', 'CLEAR', 'Identity', 'VACE']
+THRESHOLD            : 0.5                           
+PRINT_CONFIG         : True                          
+
+Evaluating 1 tracker(s) on 4 sequence(s) for 1 class(es) on MotChallenge2DBox dataset using the following metrics: HOTA, CLEAR, Identity, VACE, Count
+
+
+Evaluating SORT
+
+All sequences for SORT finished in 77.46 seconds
+
+HOTA: SORT-pedestrian              HOTA      DetA      AssA      DetRe     DetPr     AssRe     AssPr     LocA      OWTA      HOTA(0)   LocA(0)   HOTALocA(0)
+MOT20-01                           45.614    48.964    42.617    49.979    92.491    44.994    88.281    91.817    46.127    49.312    90.68     44.716    
+MOT20-02                           37.362    46.184    30.297    46.958    93.459    31.233    89.147    92.413    37.703    39.856    91.52     36.476    
+MOT20-03                           32.322    39.382    26.664    40.327    87.341    27.589    85.563    87.56     32.754    36.527    85.566    31.255    
+MOT20-05                           30.54     40.864    22.884    41.748    88.739    23.684    85.002    88.555    30.896    34.423    86.858    29.899    
+COMBINED                           32.42     41.287    25.629    42.21     89.12     26.55     86.387    88.932    32.831    36.099    87.259    31.5      
+
+CLEAR: SORT-pedestrian             MOTA      MOTP      MODA      CLR_Re    CLR_Pr    MTR       PTR       MLR       sMOTA     CLR_TP    CLR_FN    CLR_FP    IDSW      MT        PT        ML        Frag      
+MOT20-01                           52.773    91.47     53.603    53.82     99.6      24.324    51.351    24.324    48.182    10694     9176      43        165       18        38        18        214       
+MOT20-02                           49.206    92.103    49.903    50.074    99.66     21.111    61.111    17.778    45.252    77485     77257     264       1078      57        165       48        1390      
+MOT20-03                           44.058    86.283    45.391    45.781    99.155    10.399    59.402    30.199    37.778    143596    170062    1224      4182      73        417       212       6335      
+MOT20-05                           45.604    87.521    46.775    46.91     99.712    11.976    61.078    26.946    39.75     303201    343143    875       7565      140       714       315       11631     
+COMBINED                           45.794    87.931    46.938    47.15     99.552    13.002    60.226    26.772    40.103    534976    599638    2406      12990     288       1334      593       19570     
+
+Identity: SORT-pedestrian          IDF1      IDR       IDP       IDTP      IDFN      IDFP      
+MOT20-01                           49.858    38.4      71.063    7630      12240     3107      
+MOT20-02                           38.635    29.023    57.764    44911     109831    32838     
+MOT20-03                           35.679    26.076    56.477    81790     231868    63030     
+MOT20-05                           31.647    23.268    49.459    150392    495952    153684    
+COMBINED                           34.058    25.094    52.983    284723    849891    252659    
+
+VACE: SORT-pedestrian              SFDA      ATA       
+MOT20-01                           64.446    21.629    
+MOT20-02                           62.939    13.104    
+MOT20-03                           55.711    7.6027    
+MOT20-05                           56.169    7.395     
+COMBINED                           58.552    8.2503    
+
+Count: SORT-pedestrian             Dets      GT_Dets   IDs       GT_IDs    
+MOT20-01                           10737     19870     190       74        
+MOT20-02                           77749     154742    1100      270       
+MOT20-03                           144820    313658    4094      702       
+MOT20-05                           304076    646344    7104      1169      
+COMBINED                           537382    1134614   12488     2215      
+
+Timing analysis:
+MotChallenge2DBox.get_raw_seq_data                                     8.6535 sec
+MotChallenge2DBox.get_preprocessed_seq_data                            2.9992 sec
+HOTA.eval_sequence                                                     9.2431 sec
+CLEAR.eval_sequence                                                    1.0510 sec
+Identity.eval_sequence                                                 53.8065 sec
+VACE.eval_sequence                                                     1.6493 sec
+Count.eval_sequence                                                    0.0000 sec
+eval_sequence                                                          77.4574 sec
+Evaluator.evaluate                                                     78.1195 sec
